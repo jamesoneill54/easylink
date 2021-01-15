@@ -24,26 +24,50 @@ I have implemented the project using [Spring Boot](https://spring.io/projects/sp
    
     This will lead the user to the page supplied when creating the link. 
 
-3. **Metrics**
+### Proposed Features
+
+**Metrics**
     
-    `http://localhost:8081/metrics`
-   
-    This will lead the user to a metrics page, providing the following information. 
-   
-    1. How many overall visits the site has had.
-    2. How many links have been created.
-    3. How many times users have been forwarded to a destination site.
-    
-    Each metric can be gathered individually through the following API endpoints:
-    
-    1. `http://localhost:8081/metrics/visits`
-    2. `http://localhost:8081/metrics/created`
-    3. `http://localhost:8081/metrics/forwarded`
+`http://localhost:8081/metrics`
+
+This will lead the user to a metrics page, providing the following information. 
+
+1. How many overall visits the site has had.
+2. How many links have been created.
+3. How many times users have been forwarded to a destination site.
+
+Each metric can be gathered individually through the following API endpoints:
+
+1. `http://localhost:8081/metrics/visits`
+2. `http://localhost:8081/metrics/created`
+3. `http://localhost:8081/metrics/forwarded`
    
 ## Usage
 
-## Design Decisions
+### Packaging and running the application
 
-**Links are verified before creating a shortened link**
+1. Package the application:
+   
+   From the root directory of the project, run the following command:
+   ```
+   mvn package
+   ```
 
-This is to ensure dead or invalid links are not used by users. 
+2. Build the docker image:
+
+   ```
+   docker build --file=Dockerfile --tag=easylink-server:latest --rm=true .
+   ```
+
+3. Run the docker image:
+
+   ```
+   docker run --name=easylink-server --publish=8081:8081 easylink-server:latest
+   ```
+   
+### Stopping the application
+
+The application can be stopped by stopping the docker container. 
+
+1. Find the docker container ID using `docker ps`.
+2. Stop the container using `docker stop <container-id>`.
