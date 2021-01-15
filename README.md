@@ -8,7 +8,13 @@ I have implemented the project using [Spring Boot](https://spring.io/projects/sp
 
 1. **Creating a link:** 
    
-    `http://localhost:8081/create/<originalLink>`
+    Post request to this address: `http://localhost:8081/create/`
+
+    Request body should be: 
+
+    ```
+    {"link": "http://www.google.com"}
+    ```
 
     This will return a link that can be used in place of the other, longer link. 
    
