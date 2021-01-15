@@ -5,7 +5,6 @@ import com.neueda.easylink.model.CreationResponse;
 import com.neueda.easylink.model.EasyLink;
 import com.neueda.easylink.repository.EasyLinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +17,7 @@ class EasyLinkController {
     private final EasyLinkRepository repository;
 
     @Autowired
-    private EasyLinkController(EasyLinkRepository repository, Environment environment) {
+    private EasyLinkController(EasyLinkRepository repository) {
         this.repository = repository;
     }
 
