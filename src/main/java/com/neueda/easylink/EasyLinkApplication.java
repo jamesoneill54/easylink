@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EasylinkApplication {
+public class EasyLinkApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EasylinkApplication.class, args);
+        SpringApplication.run(EasyLinkApplication.class, args);
     }
-
 }

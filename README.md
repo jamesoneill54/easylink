@@ -8,19 +8,19 @@ I have implemented the project using [Spring Boot](https://spring.io/projects/sp
 
 1. **Creating a link:** 
    
-    `http://localhost:6000/create/<originalLink>`
+    `http://localhost:8081/create/<originalLink>`
 
     This will return a link that can be used in place of the other, longer link. 
    
 2. **Using a link that has been created:**
 
-    `http://localhost:6000/<providedLink>`
+    `http://localhost:8081/<providedLink>`
    
     This will lead the user to the page supplied when creating the link. 
 
 3. **Metrics**
     
-    `http://localhost:6000/metrics`
+    `http://localhost:8081/metrics`
    
     This will lead the user to a metrics page, providing the following information. 
    
@@ -30,8 +30,14 @@ I have implemented the project using [Spring Boot](https://spring.io/projects/sp
     
     Each metric can be gathered individually through the following API endpoints:
     
-    1. `http://localhost:6000/metrics/visits`
-    2. `http://localhost:6000/metrics/created`
-    3. `http://localhost:6000/metrics/forwarded`
-    
+    1. `http://localhost:8081/metrics/visits`
+    2. `http://localhost:8081/metrics/created`
+    3. `http://localhost:8081/metrics/forwarded`
+   
 ## Usage
+
+## Design Decisions
+
+**Links are verified before creating a shortened link**
+
+This is to ensure dead or invalid links are not used by users. 
